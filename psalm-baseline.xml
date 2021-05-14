@@ -140,8 +140,7 @@
     </DeprecatedMethod>
   </file>
   <file src="lib/Doctrine/ORM/Id/TableGenerator.php">
-    <DeprecatedMethod occurrences="2">
-      <code>executeUpdate</code>
+    <DeprecatedMethod occurrences="1">
       <code>fetchColumn</code>
     </DeprecatedMethod>
     <UndefinedMethod occurrences="2">
@@ -427,10 +426,7 @@
     </UndefinedInterfaceMethod>
   </file>
   <file src="lib/Doctrine/ORM/Persisters/Collection/ManyToManyPersister.php">
-    <DeprecatedMethod occurrences="6">
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
+    <DeprecatedMethod occurrences="3">
       <code>fetchColumn</code>
       <code>fetchColumn</code>
       <code>fetchColumn</code>
@@ -439,20 +435,9 @@
       <code>$this-&gt;conn-&gt;fetchColumn($sql, $params, 0, $types)</code>
     </FalsableReturnStatement>
   </file>
-  <file src="lib/Doctrine/ORM/Persisters/Collection/OneToManyPersister.php">
-    <DeprecatedMethod occurrences="5">
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-    </DeprecatedMethod>
-  </file>
   <file src="lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php">
-    <DeprecatedMethod occurrences="6">
+    <DeprecatedMethod occurrences="4">
       <code>closeCursor</code>
-      <code>execute</code>
-      <code>executeUpdate</code>
       <code>fetchColumn</code>
       <code>fetchColumn</code>
       <code>fetchColumn</code>
@@ -469,11 +454,9 @@
     </NullableReturnStatement>
   </file>
   <file src="lib/Doctrine/ORM/Persisters/Entity/JoinedSubclassPersister.php">
-    <DeprecatedMethod occurrences="5">
+    <DeprecatedMethod occurrences="3">
       <code>closeCursor</code>
       <code>closeCursor</code>
-      <code>execute</code>
-      <code>execute</code>
       <code>getSQLResultCasing</code>
     </DeprecatedMethod>
   </file>
@@ -539,29 +522,6 @@
     <UndefinedMethod occurrences="1">
       <code>walkWhenClauseExpression</code>
     </UndefinedMethod>
-  </file>
-  <file src="lib/Doctrine/ORM/Query/Exec/MultiTableDeleteExecutor.php">
-    <DeprecatedMethod occurrences="5">
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-    </DeprecatedMethod>
-  </file>
-  <file src="lib/Doctrine/ORM/Query/Exec/MultiTableUpdateExecutor.php">
-    <DeprecatedMethod occurrences="5">
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-      <code>executeUpdate</code>
-    </DeprecatedMethod>
-  </file>
-  <file src="lib/Doctrine/ORM/Query/Exec/SingleTableDeleteUpdateExecutor.php">
-    <DeprecatedMethod occurrences="1">
-      <code>executeUpdate</code>
-    </DeprecatedMethod>
   </file>
   <file src="lib/Doctrine/ORM/Query/Parser.php">
     <InvalidArrayOffset occurrences="2">

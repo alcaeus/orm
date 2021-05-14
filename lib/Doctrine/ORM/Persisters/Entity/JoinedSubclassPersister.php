@@ -169,7 +169,7 @@ class JoinedSubclassPersister extends AbstractEntityInheritancePersister
                 $rootTableStmt->bindValue($paramIndex++, $value, $this->columnTypes[$columnName]);
             }
 
-            $rootTableStmt->execute();
+            $rootTableStmt->executeStatement();
 
             if ($isPostInsertId) {
                 $generatedId     = $idGenerator->generate($this->em, $entity);
@@ -204,7 +204,7 @@ class JoinedSubclassPersister extends AbstractEntityInheritancePersister
                     }
                 }
 
-                $stmt->execute();
+                $stmt->executeStatement();
             }
         }
 

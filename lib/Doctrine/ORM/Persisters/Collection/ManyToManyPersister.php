@@ -61,7 +61,7 @@ class ManyToManyPersister extends AbstractCollectionPersister
             $types[] = PersisterHelper::getTypeOfColumn($joinColumn['referencedColumnName'], $class, $this->em);
         }
 
-        $this->conn->executeUpdate($this->getDeleteSQL($collection), $this->getDeleteSQLParameters($collection), $types);
+        $this->conn->executeStatement($this->getDeleteSQL($collection), $this->getDeleteSQLParameters($collection), $types);
     }
 
     /**
@@ -79,7 +79,7 @@ class ManyToManyPersister extends AbstractCollectionPersister
         [$insertSql, $insertTypes] = $this->getInsertRowSQL($collection);
 
         foreach ($collection->getDeleteDiff() as $element) {
-            $this->conn->executeUpdate(
+            $this->conn->executeStatement(
                 $deleteSql,
                 $this->getDeleteRowSQLParameters($collection, $element),
                 $deleteTypes
@@ -87,7 +87,7 @@ class ManyToManyPersister extends AbstractCollectionPersister
         }
 
         foreach ($collection->getInsertDiff() as $element) {
-            $this->conn->executeUpdate(
+            $this->conn->executeStatement(
                 $insertSql,
                 $this->getInsertRowSQLParameters($collection, $element),
                 $insertTypes

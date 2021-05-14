@@ -284,7 +284,7 @@ class BasicEntityPersister implements EntityPersister
                 }
             }
 
-            $stmt->execute();
+            $stmt->executeStatement();
 
             if ($isPostInsertId) {
                 $generatedId     = $idGenerator->generate($this->em, $entity);
@@ -509,7 +509,7 @@ class BasicEntityPersister implements EntityPersister
              . ' SET ' . implode(', ', $set)
              . ' WHERE ' . implode(' = ? AND ', $where) . ' = ?';
 
-        $result = $this->conn->executeUpdate($sql, $params, $types);
+        $result = $this->conn->executeStatement($sql, $params, $types);
 
         if ($versioned && ! $result) {
             throw OptimisticLockException::lockFailed($entity);

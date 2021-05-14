@@ -80,7 +80,7 @@ class TableGenerator extends AbstractIdGenerator
                         $this->_allocationSize
                     );
 
-                    if ($conn->executeUpdate($updateSql, [1 => $currentLevel, 2 => $currentLevel + 1]) !== 1) {
+                    if ($conn->executeStatement($updateSql, [1 => $currentLevel, 2 => $currentLevel + 1]) !== 1) {
                         // no affected rows, concurrency issue, throw exception
                     }
                 } else {
