@@ -135,9 +135,8 @@
     </MoreSpecificImplementedParamType>
   </file>
   <file src="lib/Doctrine/ORM/Id/SequenceGenerator.php">
-    <DeprecatedMethod occurrences="2">
+    <DeprecatedMethod occurrences="1">
       <code>fetchColumn</code>
-      <code>query</code>
     </DeprecatedMethod>
   </file>
   <file src="lib/Doctrine/ORM/Id/TableGenerator.php">
@@ -151,10 +150,9 @@
     </UndefinedMethod>
   </file>
   <file src="lib/Doctrine/ORM/Id/UuidGenerator.php">
-    <DeprecatedMethod occurrences="3">
+    <DeprecatedMethod occurrences="2">
       <code>fetchColumn</code>
       <code>getGuidExpression</code>
-      <code>query</code>
     </DeprecatedMethod>
   </file>
   <file src="lib/Doctrine/ORM/Internal/Hydration/AbstractHydrator.php">
