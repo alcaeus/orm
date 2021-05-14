@@ -208,10 +208,10 @@ class JoinedSubclassPersister extends AbstractEntityInheritancePersister
             }
         }
 
-        $rootTableStmt->closeCursor();
+        $rootTableStmt->free();
 
         foreach ($subTableStmts as $stmt) {
-            $stmt->closeCursor();
+            $stmt->free();
         }
 
         $this->queuedInserts = [];

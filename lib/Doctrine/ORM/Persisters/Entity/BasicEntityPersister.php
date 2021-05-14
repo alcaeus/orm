@@ -302,7 +302,7 @@ class BasicEntityPersister implements EntityPersister
             }
         }
 
-        $stmt->closeCursor();
+        $stmt->free();
         $this->queuedInserts = [];
 
         return $postInsertIds;
@@ -348,10 +348,9 @@ class BasicEntityPersister implements EntityPersister
 
         $flatId = $this->identifierFlattener->flattenIdentifier($versionedClass, $id);
 
-        $value = $this->conn->fetchColumn(
+        $value = $this->conn->fetchOne(
             $sql,
             array_values($flatId),
-            0,
             $this->extractIdentifierTypes($id, $versionedClass)
         );
 
@@ -832,7 +831,7 @@ class BasicEntityPersister implements EntityPersister
             ? $this->expandCriteriaParameters($criteria)
             : $this->expandParameters($criteria);
 
-        return (int) $this->conn->executeQuery($sql, $params, $types)->fetchColumn();
+        return (int) $this->conn->executeQuery($sql, $params, $types)->fetchOne();
     }
 
     /**
@@ -2003,7 +2002,7 @@ class BasicEntityPersister implements EntityPersister
             $sql .= ' AND ' . $filterSql;
         }
 
-        return (bool) $this->conn->fetchColumn($sql, $params, 0, $types);
+        return (bool) $this->conn->fetchOne($sql, $params, $types);
     }
 
     /**

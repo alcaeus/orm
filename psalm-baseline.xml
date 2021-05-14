@@ -134,57 +134,20 @@
       <code>$orderBy</code>
     </MoreSpecificImplementedParamType>
   </file>
-  <file src="lib/Doctrine/ORM/Id/SequenceGenerator.php">
-    <DeprecatedMethod occurrences="1">
-      <code>fetchColumn</code>
-    </DeprecatedMethod>
-  </file>
   <file src="lib/Doctrine/ORM/Id/TableGenerator.php">
-    <DeprecatedMethod occurrences="1">
-      <code>fetchColumn</code>
-    </DeprecatedMethod>
     <UndefinedMethod occurrences="2">
       <code>getTableHiLoCurrentValSql</code>
       <code>getTableHiLoUpdateNextValSql</code>
     </UndefinedMethod>
   </file>
   <file src="lib/Doctrine/ORM/Id/UuidGenerator.php">
-    <DeprecatedMethod occurrences="2">
-      <code>fetchColumn</code>
+    <DeprecatedMethod occurrences="1">
       <code>getGuidExpression</code>
     </DeprecatedMethod>
   </file>
-  <file src="lib/Doctrine/ORM/Internal/Hydration/AbstractHydrator.php">
-    <DeprecatedMethod occurrences="3">
-      <code>closeCursor</code>
-      <code>fetch</code>
-      <code>fetch</code>
-    </DeprecatedMethod>
-  </file>
-  <file src="lib/Doctrine/ORM/Internal/Hydration/ArrayHydrator.php">
-    <DeprecatedMethod occurrences="1">
-      <code>fetch</code>
-    </DeprecatedMethod>
-  </file>
-  <file src="lib/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php">
-    <DeprecatedMethod occurrences="1">
-      <code>fetch</code>
-    </DeprecatedMethod>
-  </file>
-  <file src="lib/Doctrine/ORM/Internal/Hydration/ScalarHydrator.php">
-    <DeprecatedMethod occurrences="1">
-      <code>fetch</code>
-    </DeprecatedMethod>
-  </file>
   <file src="lib/Doctrine/ORM/Internal/Hydration/SimpleObjectHydrator.php">
-    <DeprecatedMethod occurrences="2">
-      <code>fetch</code>
-      <code>getSQLResultCasing</code>
-    </DeprecatedMethod>
-  </file>
-  <file src="lib/Doctrine/ORM/Internal/Hydration/SingleScalarHydrator.php">
     <DeprecatedMethod occurrences="1">
-      <code>fetchAll</code>
+      <code>getSQLResultCasing</code>
     </DeprecatedMethod>
   </file>
   <file src="lib/Doctrine/ORM/LazyCriteriaCollection.php">
@@ -426,22 +389,11 @@
     </UndefinedInterfaceMethod>
   </file>
   <file src="lib/Doctrine/ORM/Persisters/Collection/ManyToManyPersister.php">
-    <DeprecatedMethod occurrences="3">
-      <code>fetchColumn</code>
-      <code>fetchColumn</code>
-      <code>fetchColumn</code>
-    </DeprecatedMethod>
     <FalsableReturnStatement occurrences="1">
-      <code>$this-&gt;conn-&gt;fetchColumn($sql, $params, 0, $types)</code>
+      <code>$this-&gt;conn-&gt;fetchOne($sql, $params, $types)</code>
     </FalsableReturnStatement>
   </file>
   <file src="lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php">
-    <DeprecatedMethod occurrences="4">
-      <code>closeCursor</code>
-      <code>fetchColumn</code>
-      <code>fetchColumn</code>
-      <code>fetchColumn</code>
-    </DeprecatedMethod>
     <InvalidArgument occurrences="1">
       <code>$hints</code>
     </InvalidArgument>
@@ -454,9 +406,7 @@
     </NullableReturnStatement>
   </file>
   <file src="lib/Doctrine/ORM/Persisters/Entity/JoinedSubclassPersister.php">
-    <DeprecatedMethod occurrences="3">
-      <code>closeCursor</code>
-      <code>closeCursor</code>
+    <DeprecatedMethod occurrences="1">
       <code>getSQLResultCasing</code>
     </DeprecatedMethod>
   </file>

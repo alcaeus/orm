@@ -20,8 +20,10 @@
 
 namespace Doctrine\ORM\Internal\Hydration;
 
+use Doctrine\DBAL\Driver;
 use Doctrine\DBAL\Driver\ResultStatement;
 use Doctrine\DBAL\FetchMode;
+use Doctrine\DBAL\ForwardCompatibility\Result;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
 use Doctrine\Deprecations\Deprecation;
@@ -92,7 +94,7 @@ abstract class AbstractHydrator
     /**
      * The statement that provides the data to hydrate.
      *
-     * @var ResultStatement
+     * @var Result|null
      */
     protected $_stmt;
 
@@ -120,7 +122,7 @@ abstract class AbstractHydrator
      *
      * @deprecated
      *
-     * @param object $stmt
+     * @param ResultStatement $stmt
      * @param object $resultSetMapping
      * @psalm-param array<string, mixed> $hints
      *
@@ -135,7 +137,7 @@ abstract class AbstractHydrator
             __METHOD__
         );
 
-        $this->_stmt  = $stmt;
+        $this->_stmt  = Result::ensure($stmt);
         $this->_rsm   = $resultSetMapping;
         $this->_hints = $hints;
 
@@ -157,7 +159,7 @@ abstract class AbstractHydrator
      */
     public function toIterable(ResultStatement $stmt, ResultSetMapping $resultSetMapping, array $hints = []): iterable
     {
-        $this->_stmt  = $stmt;
+        $this->_stmt  = Result::ensure($stmt);
         $this->_rsm   = $resultSetMapping;
         $this->_hints = $hints;
 
@@ -168,7 +170,7 @@ abstract class AbstractHydrator
         $this->prepare();
 
         while (true) {
-            $row = $this->_stmt->fetch(FetchMode::ASSOCIATIVE);
+            $row = $this->_stmt->fetchAssociative();
 
             if ($row === false || $row === null) {
                 $this->cleanup();
@@ -225,7 +227,7 @@ abstract class AbstractHydrator
      */
     public function hydrateRow()
     {
-        $row = $this->_stmt->fetch(PDO::FETCH_ASSOC);
+        $row = $this->_stmt->fetchAssociative();
 
         if ($row === false || $row === null) {
             $this->cleanup();
@@ -270,7 +272,7 @@ abstract class AbstractHydrator
      */
     protected function cleanup()
     {
-        $this->_stmt->closeCursor();
+        $this->_stmt->free();
 
         $this->_stmt          = null;
         $this->_rsm           = null;
