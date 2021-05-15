@@ -20,5 +20,10 @@
                 <file name="lib/Doctrine/ORM/Mapping/ClassMetadataInfo.php"/>
             </errorLevel>
         </ParadoxicalCondition>
+        <DeprecatedMethod>
+            <errorLevel type="error">
+                <directory name="lib"/>
+            </errorLevel>
+        </DeprecatedMethod>
     </issueHandlers>
 </psalm>

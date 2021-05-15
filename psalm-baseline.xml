@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <files psalm-version="4.7.0@d4377c0baf3ffbf0b1ec6998e8d1be2a40971005">
   <file src="lib/Doctrine/ORM/AbstractQuery.php">
+    <DeprecatedMethod occurrences="1">
+      <code>iterate</code>
+    </DeprecatedMethod>
     <FalsableReturnStatement occurrences="1">
       <code>! $filteredParameters-&gt;isEmpty() ? $filteredParameters-&gt;first() : null</code>
     </FalsableReturnStatement>
@@ -80,7 +83,27 @@
       <code>null</code>
     </NullableReturnStatement>
   </file>
+  <file src="lib/Doctrine/ORM/Configuration.php">
+    <DeprecatedMethod occurrences="3">
+      <code>AnnotationRegistry::registerFile(__DIR__ . '/Mapping/Driver/DoctrineAnnotations.php')</code>
+      <code>getAutoGenerateProxyClasses</code>
+      <code>getMetadataCacheImpl</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Decorator/EntityManagerDecorator.php">
+    <DeprecatedMethod occurrences="2">
+      <code>copy</code>
+      <code>getHydrator</code>
+    </DeprecatedMethod>
+  </file>
   <file src="lib/Doctrine/ORM/EntityManager.php">
+    <DeprecatedMethod occurrences="5">
+      <code>getAutoGenerateProxyClasses</code>
+      <code>getMetadataCacheImpl</code>
+      <code>getProxyDir</code>
+      <code>getProxyNamespace</code>
+      <code>merge</code>
+    </DeprecatedMethod>
     <InvalidReturnStatement occurrences="6">
       <code>$entity</code>
       <code>$entity</code>
@@ -111,11 +134,61 @@
       <code>$orderBy</code>
     </MoreSpecificImplementedParamType>
   </file>
+  <file src="lib/Doctrine/ORM/Id/SequenceGenerator.php">
+    <DeprecatedMethod occurrences="2">
+      <code>fetchColumn</code>
+      <code>query</code>
+    </DeprecatedMethod>
+  </file>
   <file src="lib/Doctrine/ORM/Id/TableGenerator.php">
+    <DeprecatedMethod occurrences="2">
+      <code>executeUpdate</code>
+      <code>fetchColumn</code>
+    </DeprecatedMethod>
     <UndefinedMethod occurrences="2">
       <code>getTableHiLoCurrentValSql</code>
       <code>getTableHiLoUpdateNextValSql</code>
     </UndefinedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Id/UuidGenerator.php">
+    <DeprecatedMethod occurrences="3">
+      <code>fetchColumn</code>
+      <code>getGuidExpression</code>
+      <code>query</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Internal/Hydration/AbstractHydrator.php">
+    <DeprecatedMethod occurrences="3">
+      <code>closeCursor</code>
+      <code>fetch</code>
+      <code>fetch</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Internal/Hydration/ArrayHydrator.php">
+    <DeprecatedMethod occurrences="1">
+      <code>fetch</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php">
+    <DeprecatedMethod occurrences="1">
+      <code>fetch</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Internal/Hydration/ScalarHydrator.php">
+    <DeprecatedMethod occurrences="1">
+      <code>fetch</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Internal/Hydration/SimpleObjectHydrator.php">
+    <DeprecatedMethod occurrences="2">
+      <code>fetch</code>
+      <code>getSQLResultCasing</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Internal/Hydration/SingleScalarHydrator.php">
+    <DeprecatedMethod occurrences="1">
+      <code>fetchAll</code>
+    </DeprecatedMethod>
   </file>
   <file src="lib/Doctrine/ORM/LazyCriteriaCollection.php">
     <MoreSpecificImplementedParamType occurrences="1">
@@ -125,7 +198,24 @@
       <code>matching</code>
     </UndefinedInterfaceMethod>
   </file>
+  <file src="lib/Doctrine/ORM/Mapping/AnsiQuoteStrategy.php">
+    <DeprecatedMethod occurrences="1">
+      <code>getSQLResultCasing</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Mapping/Builder/ClassMetadataBuilder.php">
+    <DeprecatedMethod occurrences="1">
+      <code>addNamedQuery</code>
+    </DeprecatedMethod>
+  </file>
   <file src="lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php">
+    <DeprecatedMethod occurrences="5">
+      <code>addNamedNativeQuery</code>
+      <code>addNamedQuery</code>
+      <code>fixSchemaElementName</code>
+      <code>fixSchemaElementName</code>
+      <code>prefersSequences</code>
+    </DeprecatedMethod>
     <InvalidArrayOffset occurrences="1">
       <code>$subClass-&gt;table[$indexType][$indexName]</code>
     </InvalidArrayOffset>
@@ -161,6 +251,11 @@
       <code>$this-&gt;reflFields[$name]</code>
       <code>$this-&gt;reflFields[$this-&gt;identifier[0]]</code>
     </NullableReturnStatement>
+  </file>
+  <file src="lib/Doctrine/ORM/Mapping/DefaultQuoteStrategy.php">
+    <DeprecatedMethod occurrences="1">
+      <code>getSQLResultCasing</code>
+    </DeprecatedMethod>
   </file>
   <file src="lib/Doctrine/ORM/Mapping/Driver/AnnotationDriver.php">
     <UndefinedInterfaceMethod occurrences="32">
@@ -334,11 +429,36 @@
     </UndefinedInterfaceMethod>
   </file>
   <file src="lib/Doctrine/ORM/Persisters/Collection/ManyToManyPersister.php">
+    <DeprecatedMethod occurrences="6">
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+      <code>fetchColumn</code>
+      <code>fetchColumn</code>
+      <code>fetchColumn</code>
+    </DeprecatedMethod>
     <FalsableReturnStatement occurrences="1">
       <code>$this-&gt;conn-&gt;fetchColumn($sql, $params, 0, $types)</code>
     </FalsableReturnStatement>
   </file>
+  <file src="lib/Doctrine/ORM/Persisters/Collection/OneToManyPersister.php">
+    <DeprecatedMethod occurrences="5">
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+    </DeprecatedMethod>
+  </file>
   <file src="lib/Doctrine/ORM/Persisters/Entity/BasicEntityPersister.php">
+    <DeprecatedMethod occurrences="6">
+      <code>closeCursor</code>
+      <code>execute</code>
+      <code>executeUpdate</code>
+      <code>fetchColumn</code>
+      <code>fetchColumn</code>
+      <code>fetchColumn</code>
+    </DeprecatedMethod>
     <InvalidArgument occurrences="1">
       <code>$hints</code>
     </InvalidArgument>
@@ -350,6 +470,20 @@
       <code>$targetEntity</code>
     </NullableReturnStatement>
   </file>
+  <file src="lib/Doctrine/ORM/Persisters/Entity/JoinedSubclassPersister.php">
+    <DeprecatedMethod occurrences="5">
+      <code>closeCursor</code>
+      <code>closeCursor</code>
+      <code>execute</code>
+      <code>execute</code>
+      <code>getSQLResultCasing</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Persisters/Entity/SingleTablePersister.php">
+    <DeprecatedMethod occurrences="1">
+      <code>getSQLResultCasing</code>
+    </DeprecatedMethod>
+  </file>
   <file src="lib/Doctrine/ORM/Proxy/ProxyFactory.php">
     <InvalidArgument occurrences="1">
       <code>$classMetadata-&gt;getReflectionProperties()</code>
@@ -359,6 +493,9 @@
     </UndefinedInterfaceMethod>
   </file>
   <file src="lib/Doctrine/ORM/Query.php">
+    <DeprecatedMethod occurrences="1">
+      <code>parent::iterate($parameters, $hydrationMode)</code>
+    </DeprecatedMethod>
     <LessSpecificImplementedReturnType occurrences="1">
       <code>mixed</code>
     </LessSpecificImplementedReturnType>
@@ -405,6 +542,29 @@
       <code>walkWhenClauseExpression</code>
     </UndefinedMethod>
   </file>
+  <file src="lib/Doctrine/ORM/Query/Exec/MultiTableDeleteExecutor.php">
+    <DeprecatedMethod occurrences="5">
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Query/Exec/MultiTableUpdateExecutor.php">
+    <DeprecatedMethod occurrences="5">
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+      <code>executeUpdate</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Query/Exec/SingleTableDeleteUpdateExecutor.php">
+    <DeprecatedMethod occurrences="1">
+      <code>executeUpdate</code>
+    </DeprecatedMethod>
+  </file>
   <file src="lib/Doctrine/ORM/Query/Parser.php">
     <InvalidArrayOffset occurrences="2">
       <code>$this-&gt;identVariableExpressions[$dqlAlias]</code>
@@ -443,6 +603,12 @@
       <code>$this-&gt;lexer-&gt;token['value']</code>
     </NullableReturnStatement>
   </file>
+  <file src="lib/Doctrine/ORM/Query/ResultSetMappingBuilder.php">
+    <DeprecatedMethod occurrences="2">
+      <code>getSQLResultCasing</code>
+      <code>getSQLResultCasing</code>
+    </DeprecatedMethod>
+  </file>
   <file src="lib/Doctrine/ORM/Query/SqlWalker.php">
     <InvalidArgument occurrences="1">
       <code>$selectedClass['class']-&gt;name</code>
@@ -466,6 +632,10 @@
     </InvalidPropertyAssignmentValue>
   </file>
   <file src="lib/Doctrine/ORM/QueryBuilder.php">
+    <DeprecatedMethod occurrences="2">
+      <code>getRootAlias</code>
+      <code>getRootAlias</code>
+    </DeprecatedMethod>
     <FalsableReturnStatement occurrences="1">
       <code>! $filteredParameters-&gt;isEmpty() ? $filteredParameters-&gt;first() : null</code>
     </FalsableReturnStatement>
@@ -480,6 +650,12 @@
     <InvalidNullableReturnType occurrences="1">
       <code>execute</code>
     </InvalidNullableReturnType>
+  </file>
+  <file src="lib/Doctrine/ORM/Tools/Console/Command/GenerateProxiesCommand.php">
+    <DeprecatedMethod occurrences="2">
+      <code>getProxyDir</code>
+      <code>getProxyDir</code>
+    </DeprecatedMethod>
   </file>
   <file src="lib/Doctrine/ORM/Tools/Console/Command/MappingDescribeCommand.php">
     <InvalidArgument occurrences="1">
@@ -508,6 +684,21 @@
     <MoreSpecificImplementedParamType occurrences="1">
       <code>$query</code>
     </MoreSpecificImplementedParamType>
+  </file>
+  <file src="lib/Doctrine/ORM/Tools/Pagination/Paginator.php">
+    <DeprecatedMethod occurrences="1">
+      <code>getSQLResultCasing</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Tools/SchemaTool.php">
+    <DeprecatedMethod occurrences="1">
+      <code>addUnnamedForeignKeyConstraint</code>
+    </DeprecatedMethod>
+  </file>
+  <file src="lib/Doctrine/ORM/Tools/Setup.php">
+    <DeprecatedMethod occurrences="1">
+      <code>setMetadataCacheImpl</code>
+    </DeprecatedMethod>
   </file>
   <file src="lib/Doctrine/ORM/UnitOfWork.php">
     <InvalidNullableReturnType occurrences="1">
